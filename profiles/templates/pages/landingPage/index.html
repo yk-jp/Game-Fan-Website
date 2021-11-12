@@ -1,15 +1,17 @@
-{% extends '../../base.html' %}
+{% extends '../../base.html' %} {% load static %} {% block content %}
 
-{% block content %}
-<p class="bg-dark">Hello, world. </p>
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="container d-flex align-items-center flex-column flex-md-row mt-5">
+  <div id="gameTypeInfo" class="d-flex flex-column col-12 col-md-6">
+    <div id="gameTypeText" class="d-flex justify-content-center">
+      <h6 class="text-center display-4 font-weight-bold">{{game.type}}</h6>
+    </div>
+    <div id="gameTypeAbout" class="p-0 m-0">
+      <p class="text-center lead">{{game.about}}</p>
+    </div>
+  </div>
+  <div id="landing_img" class="d-flex justify-content-center col-12 col-md-6">
+    <img src="{% static game.img %}" alt="load error" class="w-100 h-50" />
+  </div>
 </div>
 
 {% endblock %}
