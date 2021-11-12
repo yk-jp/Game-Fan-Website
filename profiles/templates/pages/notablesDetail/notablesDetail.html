@@ -1,0 +1,19 @@
+{% extends '../../base.html' %} {% load static %} {% block content %}
+
+<div class="container d-flex justify-content-center align-items-center flex-column mt-5">
+  <div class="d-flex justify-content-center">
+    <h5 class="text-center font-weight-bold">
+      Detail For {{notable.name}} In {{gameType}}
+    </h5>
+  </div>
+  <div class="d-flex justify-content-center flex-column flex-md-row">
+    <div id="notableDetail" class="p-0 m-0 d-flex align-items-center">
+      <p class="text-center lead">{{notable.about}}</p>
+    </div>
+    <div id="notableImg" class="d-flex justify-content-center col-12 col-md-6">
+      <img src="{% static notable.img %}" alt="no image" class="col-12 mt-3" />
+    </div>
+  </div>
+</div>
+
+{% endblock %}

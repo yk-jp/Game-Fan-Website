@@ -1,0 +1,25 @@
+{% extends '../../base.html' %} {% load static %} {% block content %}
+
+<div class="container-fluid mt-5">
+  <div class="d-flex justify-content-center">
+    <h6 class="display-4 font-weight-bold text-center">{{gameType}} Game Notables</h6>
+  </div>
+
+  <div id="notablesList" class="d-flex flex-wrap">
+    {% for notable in notables %}
+    <div id="notable" class="d-flex flex-column m-3 col-12 col-md-2">
+      <div id="notableName">
+        <p class="lead font-weight-bold text-center">{{notable.name}}</p>
+      </div>
+       <div id="notableImg">
+        <img src="{% static notable.img %}" alt="no image" class="col-12">
+      </div>
+      <div id="navigationToDetail" class="d-flex justify-content-center p-3 px-5">
+        <a href="{% url 'notablesDetail' index forloop.counter0  %}" class="text-center btn btn-primary">Check Details</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

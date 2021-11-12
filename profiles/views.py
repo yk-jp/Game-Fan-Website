@@ -21,14 +21,20 @@ def rules(request,rulesIndex):
         raise Http404("Invalid request. A game rule doesn't exist.") 
     return render(request, 'pages/rulesPage/rules.html',{"index":rulesIndex ,"game":config.get("games").get(gameType)})
 
-def notablesDetail(request,notablesIndex):
-    # try:
-            #  return HttpResponse("notablesDetail %s" %notablesIndex)
-    return HttpResponse(reverse('notablesDetail',args={notablesIndex}))
+def notablesDetail(request,notablesIndex,notableIndex):
+    try:
+         gameType = config["gameType"][notablesIndex]
+         notable =  config.get("notables").get(gameType)[notableIndex]
+    except Exception:
+            raise Http404("Invalid request. Notable Detail doesn't exist.") 
+    return render(request,  'pages/notablesDetail/notablesDetail.html',{"index":notablesIndex,"gameType":gameType, "notable":notable})
     
-def notablesList(request):
-    
-    return HttpResponse("notablesList")
+def notablesList(request,notablesIndex):
+    try:
+        gameType = config["gameType"][notablesIndex]
+    except Exception:
+        raise Http404("Invalid request. Notables don't exist.") 
+    return render(request,  'pages/notablesPage/notablesList.html',{"index":notablesIndex,"gameType":gameType, "notables":config.get("notables").get(gameType)})
 
 def externalLinks(request):
     return HttpResponse("externalLinks")
