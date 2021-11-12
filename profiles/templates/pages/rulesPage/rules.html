@@ -1,0 +1,16 @@
+{% extends '../../base.html' %} {% load static %} {% block content %}
+
+<div class="container d-flex align-items-center flex-column mt-5">
+  <div id="gameRules" class="d-flex flex-column col-12">
+    <div id="gameRulesText" class="d-flex justify-content-center">
+      <h6 class="text-center display-4 font-weight-bold">
+        Rule of {{game.type}}
+      </h6>
+    </div>
+    <div id="gameRulesAbout" class="p-0 mt-5">
+      <p class="text-center lead">{{game.rule}}</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
