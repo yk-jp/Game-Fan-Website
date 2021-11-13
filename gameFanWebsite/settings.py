@@ -28,7 +28,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://game-fan-website.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['game-fan-website.herokuapp.com','127.0.0.1'] #set domains up inside a list
 
 
 # Application definition
