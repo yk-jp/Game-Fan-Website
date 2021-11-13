@@ -95,8 +95,24 @@ notables = {
         ]
 }
 
+links = { 
+          'fps':[       'https://www.callofduty.com/ja/',
+                        'https://www.ea.com/games/battlefield',
+                        'https://www.ubisoft.com/en-gb/game/rainbow-six/siege'
+                ],
+        'pazzle':[
+                        'https://puyo.sega.jp/portal/index.html',
+                        'https://www.tetriseffect.game/'
+                 ],
+        'rpg':[
+                'https://www.jp.square-enix.com/kingdom/',
+                'https://www.minecraft.net/en-us/about-minecraft'
+                ]
+}
+
 config = {
   'gameType':gameType,
   'games':games,
-  'notables':notables
+  'notables':notables,
+  'links':links
 }

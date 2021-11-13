@@ -5,7 +5,7 @@ from django.urls import reverse
 # library
 import random
 # custom modules
-from .assets.config import config
+from .config.config import config
 
 # Create your views here.
 # landing page
@@ -36,5 +36,9 @@ def notablesList(request,notablesIndex):
         raise Http404("Invalid request. Notables don't exist.") 
     return render(request,  'pages/notablesPage/notablesList.html',{"index":notablesIndex,"gameType":gameType, "notables":config.get("notables").get(gameType)})
 
-def externalLinks(request):
-    return HttpResponse("externalLinks")
+def externalLinks(request,linksIndex):
+    try:
+        gameType = config["gameType"][linksIndex]
+    except Exception:
+        raise Http404("Invalid request. links don't exist.") 
+    return render(request,  'pages/linksPage/externalLinks.html',{"index":linksIndex,"gameType":gameType, "links":config.get("links").get(gameType)})

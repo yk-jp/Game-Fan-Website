@@ -1,0 +1,14 @@
+{% extends '../../base.html' %} {% load static %} {% block content %}
+
+<div class="container d-flex align-items-center flex-column mt-5">
+ <div class="d-flex justify-content-center">
+    <h5 class="text-center font-weight-bold">External Links Of {{gameType}}</h5>
+  </div>
+<ul class="list-group ">
+  {% for link in links %}
+     <li class="list-group-item text-center"><a href="{{link}}">{{link}}</a></li>
+  {% endfor %}
+</div>
+   
+</ul>
+{% endblock %}
