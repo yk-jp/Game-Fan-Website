@@ -6,5 +6,5 @@ urlpatterns = [
     path('rules/<int:rulesIndex>/', views.rules, name='rulesExplained'),
     path('notables/<int:notablesIndex>/', views.notablesList, name='notablesList'),
     path('notables/<int:notablesIndex>/<int:notableIndex>/', views.notablesDetail, name='notablesDetail'),
-    path('externalLinks/', views.externalLinks, name='externalLinks'),
+    path('externalLinks/<int:linksIndex>/', views.externalLinks, name='externalLinks'),
 ]
