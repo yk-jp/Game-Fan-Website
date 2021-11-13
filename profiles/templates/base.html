@@ -23,9 +23,9 @@
   </head>
   <body>
     <header>{% include 'partials/header.html' %}</header>
-
-    {% block content %} {% endblock %}
-
-    <footer>{% include 'partials/footer.html' %}</footer>
+    <main>
+       {% block content %} {% endblock %}
+    </main>
+    <footer class="bg-primary">{% include 'partials/footer.html' %}</footer>
   </body>
 </html>
